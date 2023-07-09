@@ -9,8 +9,8 @@ from fabric.decorators import runs_once
 def do_pack():
     '''uses fabric to generate .tgz for web_static folder'''
     local("mkdir -p versions")
-    location = ("versions/web_static_{}.tgz".format(datetime.strftime
-                                                    .now(), "%Y%m%d%H%M%S"))
+    time = datetime.now().strftime("%Y%m%d%H%M%S")
+    location = ("versions/web_static_{}.tgz".format(time))
     resp = local("tar -cvzf {} web_static".format(location))
     if resp.failed:
         return None
