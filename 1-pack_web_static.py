@@ -16,4 +16,5 @@ def do_pack():
 
     if resp.failed:
         return None
-    return location
+    else:
+        return location
